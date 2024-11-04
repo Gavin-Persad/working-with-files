@@ -4,44 +4,21 @@ import { v4 as uuidv4 } from 'uuid';
 const fileName = 'quotes.json';
 
 export async function getQuotes() {
-	const quotes = await fs.readFile(fileName, 'utf8');
-	return JSON.parse(quotes);
+	// your code goes here
 }
 
 export async function addQuote(quoteText) {
-	const quotes = await getQuotes();
-	const newQuote = {
-		id: uuidv4(),
-		text: quoteText,
-	};
-	quotes.push(newQuote);
-	await fs.writeFile(fileName, JSON.stringify(quotes, null, 2));
-	return newQuote;
+	// your code goes here
 }
 
 export async function getRandomQuote() {
-	const quotes = await getQuotes();
-	return quotes[Math.floor(Math.random() * quotes.length)];
+	// your code goes here
 }
 
 export async function editQuote(id, quoteText) {
-	const quotes = await getQuotes();
-	const quoteIndex = quotes.findIndex((quote) => quote.id === id);
-	if (quoteIndex === -1) {
-		return null;
-	}
-	quotes[quoteIndex].text = quoteText;
-	await fs.writeFile(fileName, JSON.stringify(quotes, null, 2));
-	return quotes[quoteIndex];
+	// your code goes here
 }
 
 export async function deleteQuote(id) {
-	const quotes = await getQuotes();
-	const quoteIndex = quotes.findIndex((quote) => quote.id === id);
-	if (quoteIndex === -1) {
-		return null;
-	}
-	const deletedQuote = quotes.splice(quoteIndex, 1)[0];
-	await fs.writeFile(fileName, JSON.stringify(quotes, null, 2));
-	return deletedQuote;
+	// your code goes here
 }
