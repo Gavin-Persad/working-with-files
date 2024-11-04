@@ -19,7 +19,10 @@ export async function addQuote(quoteText) {
 	return newQuote;
 }
 
-export async function getRandomQuote() {}
+export async function getRandomQuote() {
+	const quotes = await getQuotes();
+	return quotes[Math.floor(Math.random() * quotes.length)];
+}
 
 export async function editQuote(id, quoteText) {}
 
