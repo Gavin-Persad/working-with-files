@@ -85,14 +85,14 @@ Now is a good time to run `npm install` in the terminal and see that happen for 
 Open `quote.js`. In this file, a Native (core) module (`fs`) and a npm package (`uuid`) have already been imported. E.g.
 
 ```js
-import fs from "node:fs/promises";
-import { v4 as uuidv4 } from "uuid";
+import fs from 'node:fs/promises';
+import { v4 as uuidv4 } from 'uuid';
 ```
 
 The following variable has been declared and initialized.
 
 ```js
-const fileName = "quotes.json";
+const fileName = 'quotes.json';
 ```
 
 💡 As you may have already figured, `fileName` is the name of your JSON data file (where the quotes will be stored).
@@ -116,6 +116,8 @@ npm run test-ticket-2b
 ```
 
 If all tests pass, commit your work and move on to the next ticket. ✔️
+This test will fail as it needs the function from ticket 2c to pass.
+Try completing ticket 2c then running this test.
 
 <br>
 
@@ -148,6 +150,7 @@ npm run test-ticket-2c
 ```
 
 If all tests pass, commit your work and move on to the next ticket. ✔️
+Don' forget to also go back and check the ticket 2b test is now passing.
 
 <br>
 
