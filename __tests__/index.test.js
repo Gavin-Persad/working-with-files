@@ -63,7 +63,7 @@ describe('ticket 2e', () => {
 		const result = await addQuote(quoteText);
 		const result2 = await addQuote(quoteText);
 		const editedQuote = await editQuote(result.id, editedText);
-		expect(editedQuote).toStrictEqual({ id: result.id, quoteText: editedText });
+		expect(editedQuote).toStrictEqual({ id: result.id, text: editedText });
 		const quotes = JSON.parse(fs.readFileSync(fileName, { encoding: 'utf8' }));
 		expect(quotes).toStrictEqual([editedQuote, result2]);
 	});

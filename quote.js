@@ -24,6 +24,15 @@ export async function getRandomQuote() {
 	return quotes[Math.floor(Math.random() * quotes.length)];
 }
 
-export async function editQuote(id, quoteText) {}
+export async function editQuote(id, quoteText) {
+	const quotes = await getQuotes();
+	const quoteIndex = quotes.findIndex((quote) => quote.id === id);
+	if (quoteIndex === -1) {
+		return null;
+	}
+	quotes[quoteIndex].text = quoteText;
+	await fs.writeFile(fileName, JSON.stringify(quotes, null, 2));
+	return quotes[quoteIndex];
+}
 
 export async function deleteQuote(id) {}
