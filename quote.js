@@ -35,4 +35,13 @@ export async function editQuote(id, quoteText) {
 	return quotes[quoteIndex];
 }
 
-export async function deleteQuote(id) {}
+export async function deleteQuote(id) {
+	const quotes = await getQuotes();
+	const quoteIndex = quotes.findIndex((quote) => quote.id === id);
+	if (quoteIndex === -1) {
+		return null;
+	}
+	const deletedQuote = quotes.splice(quoteIndex, 1)[0];
+	await fs.writeFile(fileName, JSON.stringify(quotes, null, 2));
+	return deletedQuote;
+}
